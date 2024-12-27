@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  backend:
+    build: 
+      context: .
+      dockerfile: ./container/backend/Dockerfile
+    tty: true
+    volumes:
+      - ./backend:/api
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build: 
+      context: .
+      dockerfile: ./container/frontend/Dockerfile
+    tty: true
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3333:3333"
