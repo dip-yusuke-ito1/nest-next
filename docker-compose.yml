@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   backend:
-    build: 
+    build:
       context: .
       dockerfile: ./container/backend/Dockerfile
     tty: true
@@ -12,7 +12,7 @@ services:
       - "3000:3000"
 
   frontend:
-    build: 
+    build:
       context: .
       dockerfile: ./container/frontend/Dockerfile
     tty: true

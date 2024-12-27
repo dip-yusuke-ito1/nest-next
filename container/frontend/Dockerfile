@@ -21,17 +21,8 @@ RUN apt-get update && apt-get install -y locales
 RUN locale-gen ja_JP.UTF-8
 RUN localedef -f UTF-8 -i ja_JP ja_JP
 
-# Stage 2: Serve the application
-FROM node:20.14.0-slim AS runner
-
-# Set working directory
-WORKDIR /app
-
-# Copy build artifacts from the builder stage
-COPY --from=builder /app ./
-
 # Expose the port the app runs on
-EXPOSE 3000
+EXPOSE 3333
 
 # Set Japanese locale and timezone
 ENV LANG=ja_JP.UTF-8
